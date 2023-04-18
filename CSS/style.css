@@ -1,0 +1,38 @@
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+color: rgb(62, 25, 99);
+text-decoration: none;
+list-style: none;
+font-family:"Lato" Arial, Helvetica, sans-serif;
+}
+body{
+    background-color:rgb(224, 194, 255);
+    display: flex;
+    min-height: 100vh;
+}
+
+header{
+    display: none;
+}
+.cart-area{
+    display: none;
+}
+.modeloWindowArea{
+    display: none
+}
+.models{
+    display: none;
+}
+.modelo-area{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.modelo-item{
+    text-align: center;
+    max-width: 250px;
+    font-family: 'Roboto', Helvetica, Arial;
+    margin: 0 auto 50px auto;
+}
