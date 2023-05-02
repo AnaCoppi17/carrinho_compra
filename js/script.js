@@ -10,6 +10,11 @@ modeloJson.map((item, index) =>{
     modeloItem.querySelector('.modelo-item-desc').innerHTML = item.description;
     modeloItem.querySelector('.modelo-item-price').innerHTML =`R$ ${item.price.toFixed(2)}`;
 
+    modeloItem.querySelector('a').addEventListener('click', (e) => {
+        e.preventDefault();
+
+        c('.modeloWindowArea').style.display = 'Flex';
+    })
 
     c ('.modelo-area').append(modeloItem);
 });

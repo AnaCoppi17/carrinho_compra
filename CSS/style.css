@@ -15,16 +15,38 @@ body{
 main{
     flex: 1;
     padding: 20px;   
-
 }
+h1{
+    font-family: 'Roboto', Helvetica, Arial;
+    margin-bottom: 40px;
+}
+
 header{
     display: none;
+    left: 0;
+    top: 0;
+    right: 0;
+    height: 60px;
+    position: fixed;
+    background-color:blueviolet;
+    align-items: center;
+
 }
-.cart-area{
+
+.menu-openner{
+    margin-right: 15px;
+    font-size: 26px;
+    padding: 5px 20px;
+    border-radius: 5px;
+}
+.menu-openner span{
+    margin-right: 10px;
+}
+.menu-close{
+    width: 32px;
+    height: 32px;
     display: none;
-}
-.modeloWindowArea{
-    display: none
+    font-size: 30px
 }
 .models{
     display: none;
@@ -39,6 +61,12 @@ header{
     max-width: 250px;
     font-family: 'Roboto', Helvetica, Arial;
     margin: 0 auto 50px auto;
+}
+.modelo-item a{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   text-decoration: none;
 }
 .modelo-item-img{
     width: 200px;
@@ -78,4 +106,60 @@ header{
     font-weight: bold;
     color: purple;
     margin-top: 10px;
+}
+.modelo-item-desc{
+    font-size: 13px;
+    color: black;
+    margin-top: 10px;
+}
+aside{
+    background-color: purple;
+    width: 0vw;
+    overflow: hidden;
+    font-family: 'Roboto', Helvetica, Arial;
+}
+
+.cart-area{
+    padding: 20px;
+}
+.modeloWindowArea{
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: blueviolet;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+}
+/*media queries*/
+@media(max-width: 1000px){
+    .modelo-area{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 840px){
+    header{
+        display: flex;
+    }
+main{
+    padding-top: 80px;
+}
+}
+aside{
+    width: auto;
+    position: fixed;
+    left: 100vw;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+.cart-area{
+    width: 100vw;
+}
+
+.menu-close{
+    display: block;
 }
