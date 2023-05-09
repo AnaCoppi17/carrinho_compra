@@ -128,38 +128,299 @@ aside{
     right: 0;
     top: 0;
     bottom: 0;
-    background-color: blueviolet;
+    background-color: rgb(0, 0, 0, 0.5);
     display: none;
     justify-content: center;
     align-items: center;
     overflow-y: auto;
-}
-/*media queries*/
-@media(max-width: 1000px){
-    .modelo-area{
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-@media (max-width: 840px){
-    header{
-        display: flex;
-    }
-main{
-    padding-top: 80px;
-}
-}
-aside{
-    width: auto;
-    position: fixed;
-    left: 100vw;
-    right: 0;
-    top: 0;
-    bottom: 0;
-}
-.cart-area{
-    width: 100vw;
+    transition: all ease 1.5s;
 }
 
-.menu-close{
-    display: block;
-}
+.modeloWindowBody {
+    width: 900px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px #999;
+    display: flex;
+    margin: 20px 0px;
+  }
+  .modeloBig {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .modeloBig-back {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: #000;
+  }
+  .modeloBig img {
+    height: 400px;
+    width: auto;
+  }
+  .modeloInfo {
+    flex: 1;
+    font-family: 'Hepta Slab', Helvetica, Arial;
+    padding-bottom: 50px;
+  }
+  .modeloInfo h1 {
+    margin-top: 50px;
+  }
+  .modeloInfo .modeloInfo-desc {
+    font-size: 25px;
+    color: #999;
+    margin-top: 10px;
+    font-family: 'Lato', Helvetica, Arial;
+  }
+  .modeloInfo-sector {
+    color: #ccc;
+    text-transform: uppercase;
+    font-size: 25px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    font-size: 25px;
+  }
+  .modeloInfo-sizes {
+    display: inline-flex;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .modeloInfo-size {
+    padding: 10px 25px;
+    color: #000;
+    background-color: #eee;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  .modeloInfo-size:hover {
+    background-color: #ccc;
+  }
+  .modeloInfo-size.selected {
+    background-color: #9439de;
+    color: #fff;
+  }
+  .modeloInfo-size.selected span {
+    color: #d6d6d6;
+  }
+  .modeloInfo-size span {
+    font-size: 12px;
+    color: #999;
+    font-weight: normal;
+  }
+  .modeloInfo-price {
+    display: flex;
+    align-items: center;
+  }
+  .modeloInfo-actualPrice {
+    font-size: 28px;
+    margin-right: 30px;
+  }
+  .modeloInfo-qtarea {
+    display: inline-flex;
+    background-color: #eee;
+    border-radius: 10px;
+    height: 30px;
+  }
+  .modeloInfo-qtarea button {
+    border: 0;
+    background-color: transparent;
+    font-size: 17px;
+    outline: 0;
+    cursor: pointer;
+    padding: 0px 10px;
+    color: #333;
+  }
+  .modeloInfo-qt {
+    line-height: 30px;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 0px 5px;
+    color: #000;
+  }
+  .modeloInfo-addButton {
+    margin-top: 30px;
+    padding: 20px 30px;
+    border-radius: 20px;
+    background-color: #48d05f;
+    color: #fff;
+    display: inline-block;
+    cursor: pointer;
+    margin-right: 30px;
+  }
+  .modeloInfo-addButton:hover {
+    background-color: #32a345;
+  }
+  .modeloInfo-cancelButton {
+    display: inline-block;
+    cursor: pointer;
+  }
+  .modeloInfo-cancelMobileButton {
+    display: none;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    margin-bottom: 30px;
+  }
+  .cart {
+    margin-bottom: 20px;
+  }
+  .cart-item {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+  }
+  .cart-item img {
+    width: 40px;
+    height: 40px;
+    margin-right: 20px;
+  }
+  .cart-item-nome {
+    flex: 1;
+  }
+  .cart-item-qtarea {
+    display: inline-flex;
+    background-color: #eee;
+    border-radius: 10px;
+    height: 30px;
+  }
+  .cart-item-qtarea button {
+    border: 0;
+    background-color: transparent;
+    font-size: 17px;
+    outline: 0;
+    cursor: pointer;
+    padding: 0px 10px;
+    color: #333;
+  }
+  .cart-item-qt {
+    line-height: 30px;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 0px 5px;
+    color: #000;
+  }
+  .cart-totalitem {
+    padding: 15px 0;
+    border-top: 1px solid #79b9dd;
+    color: #4e3170;
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+  }
+  .cart-totalitem span:first-child {
+    font-weight: bold;
+  }
+  .cart-totalitem.big {
+    font-size: 20px;
+    color: #000;
+    font-weight: bold;
+  }
+  .cart-finalizar {
+    padding: 20px 30px;
+    border-radius: 20px;
+    background-color: #48d05f;
+    color: #fff;
+    cursor: pointer;
+    text-align: center;
+    margin-top: 20px;
+    border: 2px solid #63f77c;
+    transition: all ease 0.2s;
+  }
+  .cart-finalizar:hover {
+    background-color: #35af4a;
+  }
+  @media (max-width: 1000px) {
+    .modelo-area {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 840px) {
+    body {
+      flex-direction: column;
+    }
+    .modelo-area {
+      display: block;
+    }
+    .modelo-item {
+      max-width: 100%;
+    }
+    header {
+      display: flex;
+    }
+    main {
+      padding-top: 60px;
+    }
+  
+    aside {
+      width: auto;
+      position: fixed;
+      left: 100vw;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      transition: all ease 0.2s;
+    }
+    aside.show {
+      width: auto;
+    }
+    .cart-area {
+      width: 100vw;
+    }
+  
+    .menu-closer {
+      display: block;
+    }
+  
+    .modeloWindowArea {
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
+  
+    .modeloWindowBody {
+      width: 100vw;
+      display: block;
+      padding: 20px;
+      border-radius: 0;
+      box-shadow: none;
+      margin: 0;
+    }
+  
+    .modeloBig img {
+      width: 75%;
+      height: auto;
+    }
+  
+    .modeloInfo h1 {
+      margin-top: 20px;
+    }
+  
+    .modeloInfo-qtarea {
+      height: 60px;
+    }
+    .modeloInfo-qtarea button {
+      font-size: 25px;
+      padding: 0px 25px;
+    }
+    .modeloInfo-qt {
+      line-height: 60px;
+      font-size: 20px;
+    }
+    .modeloInfo-addButton {
+      font-size: 20px;
+      display: block;
+      text-align: center;
+      margin: 30px auto;
+    }
+  
+    .modeloInfo-cancelButton {
+      display: none;
+    }
+    .modeloInfo-cancelMobileButton {
+      display: block;
+    }
+  }
+  
