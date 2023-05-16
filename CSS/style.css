@@ -19,6 +19,8 @@ main{
 h1{
     font-family: 'Roboto', Helvetica, Arial;
     margin-bottom: 40px;
+    display: flex;
+    justify-content: space-evenly;
 }
 
 header{
@@ -202,7 +204,7 @@ aside{
     background-color: #9439de;
     color: #fff;
   }
-  .modeloInfo-size.selected span {
+  .modeloInfo-size.selected spa{
     color: #d6d6d6;
   }
   .modeloInfo-size span {
